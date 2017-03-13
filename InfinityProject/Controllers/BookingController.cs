@@ -16,11 +16,11 @@ namespace InfinityProject.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        //// GET: Booking
-        //public ActionResult Index()
-        //{
-        //    return View(db.BookingViewModels.ToList());
-        //}
+        // GET: Booking
+        public ActionResult Index1()
+        {
+            return View(db.BookingViewModels.ToList());
+        }
 
         //// GET: Booking/Details/5
         //public ActionResult Details(int? id)
@@ -40,15 +40,21 @@ namespace InfinityProject.Controllers
         // GET: Booking/Create
         public ActionResult Index(string name, string surname)
         {
-            BookingViewModels b = new BookingViewModels();
-            b.Name = name;
-            b.Surname = surname;
+            try {
+                BookingViewModels b = new BookingViewModels();
+                b.Name = name;
+                b.Surname = surname;
 
-            b.Id = User.Identity.GetUserId();
-            UserManager<ApplicationUser> UserManager =
-                new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            b.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
-            return View(b);
+                b.Id = User.Identity.GetUserId();
+                UserManager<ApplicationUser> UserManager =
+                    new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                b.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
+                return View(b);
+            }
+            catch
+            {
+                return ViewBag.Message();
+            }
             
         
         }
