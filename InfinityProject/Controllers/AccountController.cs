@@ -162,7 +162,7 @@ namespace InfinityProject.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    return RedirectToAction("Create", "Booking", new { name = model.Name, surname = model.Surname });
+                    return RedirectToAction("Index", "Booking", new { name = model.Name, surname = model.Surname });
 
                 }
                 AddErrors(result);
