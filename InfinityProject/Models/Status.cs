@@ -6,10 +6,9 @@ using System.Web;
 
 namespace InfinityProject.Models
 {
-    public class Technician
+    public class Status
     {
         [Key]
         public int Id { get; set; }
-
     }
 }

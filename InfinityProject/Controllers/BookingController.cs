@@ -19,6 +19,14 @@ namespace InfinityProject.Controllers
         // GET: Booking
         public ActionResult Index1()
         {
+            //BookingViewModels b = new BookingViewModels();
+
+            //b.Id = User.Identity.GetUserId();
+            //UserManager<ApplicationUser> UserManager =
+            //    new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            //b.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
+
+            //BookingViewModels bx = db.BookingViewModels.ToList().Find(x => x.Id == b.Id);
             return View(db.BookingViewModels.ToList());
         }
 

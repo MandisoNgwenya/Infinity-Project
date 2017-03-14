@@ -149,6 +149,10 @@ namespace InfinityProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            if (Request.IsAuthenticated)
+            {
+
+            }
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, Name = model.Name, Surname = model.Surname };

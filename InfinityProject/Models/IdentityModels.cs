@@ -79,5 +79,12 @@ namespace InfinityProject.Models
         }
 
         public System.Data.Entity.DbSet<InfinityProject.Models.BookingViewModels> BookingViewModels { get; set; }
+
+        public DbSet<CustomerProfile> customer { get; set; }
+
+        public DbSet <Quotation> quotation { get; set; }
+        public DbSet<Clerk> clerk { get; set; }
+        public DbSet <Status> status { get; set; }
+        public DbSet<Technician> technician { get; set; }
     }
 }
