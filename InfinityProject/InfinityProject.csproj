@@ -182,9 +182,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\Employees.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Quotation.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,7 +194,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookingViewModels.cs" />
     <Compile Include="Models\Clerk.cs" />
-    <Compile Include="Models\CustomerProfile.cs" />
+    <Compile Include="Models\RegEmployees.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Quotation.cs" />
@@ -281,7 +285,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Employees\" />
     <Folder Include="Views\Quotation\" />
+    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

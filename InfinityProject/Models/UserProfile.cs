@@ -6,9 +6,9 @@ using System.Web;
 
 namespace InfinityProject.Models
 {
-    public class CustomerProfile
-    {
-        [Key]
-        public int Id { get; set; }
-    }
+    //public class UserProfile
+    //{
+    //    [Key]
+    //    public int Id { get; set; }
+    //}
 }

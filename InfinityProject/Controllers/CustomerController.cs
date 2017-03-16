@@ -44,7 +44,7 @@ namespace InfinityProject.Controllers
         }
         // POST: Customer/Create
         [HttpPost]
-        public ActionResult EditProfile(CustomerProfile model )
+        public ActionResult EditProfile(UserProfile model )
         {
             try
             {

@@ -31,9 +31,55 @@ namespace InfinityProject.Models
             userIdentity.AddClaim(new Claim("Surname", Surname));
             return userIdentity;
         }
+        public virtual UserProfile UserProfile { get; set; }
     }
 
-    public class Booking
+
+    public abstract class UserProfile
+    {
+
+        [Key]
+        public int UserProfileId { get; set; }
+
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Gender { get; set; }
+
+
+
+
+    }
+
+    public class Employee : UserProfile
+    {
+        public string IdentityNumber { get; set; }
+        public string ContactNumber { get; set; }
+        public string Role { get; set; }
+    }
+
+    public abstract class Customer : UserProfile
+    {
+
+        public string IdentityNumber { get; set; }
+        public string ContactNumber { get; set; }
+        //booking status
+        public string Status { get; set; }
+        [ForeignKey("Id")]
+        //returns list of all bookings  1>many
+        public string BookingID { get; set; }
+
+
+    }
+
+    public class Admin : UserProfile
+    {
+
+    }
+
+
+
+        public class Booking:Customer
     {
 
         public Booking()
@@ -80,11 +126,12 @@ namespace InfinityProject.Models
 
         public System.Data.Entity.DbSet<InfinityProject.Models.BookingViewModels> BookingViewModels { get; set; }
 
-        public DbSet<CustomerProfile> customer { get; set; }
+        //public DbSet<CustomerProfile> customer { get; set; }
 
         public DbSet <Quotation> quotation { get; set; }
         public DbSet<Clerk> clerk { get; set; }
         public DbSet <Status> status { get; set; }
         public DbSet<Technician> technician { get; set; }
+        public DbSet<RoleViewModel> Employee { get; set; }
     }
 }
