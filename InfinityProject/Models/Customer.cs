@@ -10,7 +10,7 @@ namespace InfinityProject.Models
     public class Customer
     {
         [Key]
-        public int BookingID { get; set; }
+        public int customerID { get; set; }
 
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -19,8 +19,7 @@ namespace InfinityProject.Models
         public string TelNo { get; set; }
 
         public string Device { get; set; }
-
-
+        public string status { get; set; }
         public string Id { get; set; }
         [ForeignKey("Id")]
         public virtual ApplicationUser ApplicationUser { get; set; }

@@ -66,8 +66,8 @@ namespace InfinityProject.Models
     {
 
         [Required]
-        [Display(Name = "First Name")]
-        public string Name { get; set; }
+            [Display(Name = "First Name")]
+            public string Name { get; set; }
 
         [Required]
         [Display(Name = "Surname")]

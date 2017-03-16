@@ -50,8 +50,8 @@ namespace InfinityProject.Controllers
         {
             try {
                 BookingViewModels b = new BookingViewModels();
-                b.Name = name;
-                b.Surname = surname;
+                b.cName = name;
+                b.cSurname = surname;
 
                 b.Id = User.Identity.GetUserId();
                 UserManager<ApplicationUser> UserManager =
@@ -75,8 +75,8 @@ namespace InfinityProject.Controllers
             if (ModelState.IsValid)
             {
                 var booking = new BookingViewModels();
-                booking.Name = model.Name;
-                booking.Surname = model.Surname;
+                booking.cName = model.cName;
+                booking.cSurname = model.cSurname;
                 booking.IDNumber = model.IDNumber;
              
                 booking.TelNo = model.TelNo;

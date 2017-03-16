@@ -64,10 +64,10 @@ namespace InfinityProject.Models
         public string IdentityNumber { get; set; }
         public string ContactNumber { get; set; }
         //booking status
-        public string Status { get; set; }
-        [ForeignKey("Id")]
-        //returns list of all bookings  1>many
-        public string BookingID { get; set; }
+        public int Status { get; set; }
+        //[ForeignKey("Id")]
+        ////returns list of all bookings  1>many
+        //public int BookingID { get; set; }
 
 
     }
@@ -94,10 +94,11 @@ namespace InfinityProject.Models
         }
         [Key]
         public string bookingID { get; set; }
+
         public string JobCard { get; set; }
         public string CustomerNumber { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
+        public string cName { get; set; }
+        public string cSurname { get; set; }
         public string IDNumber { get; set; }
         public string Address { get; set; }
         public string TelNo { get; set; }
@@ -126,12 +127,14 @@ namespace InfinityProject.Models
 
         public System.Data.Entity.DbSet<InfinityProject.Models.BookingViewModels> BookingViewModels { get; set; }
 
-        public DbSet<Customer> customer { get; set; }
+        //public DbSet<Customer> customer { get; set; }
 
         public DbSet <Quotation> quotation { get; set; }
         public DbSet<Clerk> clerk { get; set; }
-        public DbSet <Status> status { get; set; }
+
         public DbSet<Technician> technician { get; set; }
-        public DbSet<RoleViewModel> Employee { get; set; }
+
+        public System.Data.Entity.DbSet<InfinityProject.Models.StatusModel> StatusModels { get; set; }
+        //public DbSet<RoleViewModel> Employee { get; set; }
     }
 }

@@ -36,20 +36,23 @@ namespace InfinityProject.Controllers
                 Customer p = new Customer();
                 p.Name = name;
                 p.Surname = surname;
-
+               
                 p.Id = User.Identity.GetUserId();
                 UserManager<ApplicationUser> UserManager =
                     new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 p.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
                 id = Convert.ToInt16(p.Id);
                 var booking = new BookingViewModels();
-                booking.Name = model.Name;
-                booking.Surname = model.Surname;
+                booking.cName = model.cName;
+                booking.cSurname = model.cSurname;
                 booking.IDNumber = model.IDNumber;
 
                 booking.TelNo = model.TelNo;
                 booking.Address = model.Address;
                 booking.Device = model.Device;
+
+
+                
                 return View(p);
             }
             catch
@@ -67,6 +70,11 @@ namespace InfinityProject.Controllers
             return View();
         }
 
+        public ActionResult myBookings()
+        {
+
+            return View();
+        }
         [HttpGet]
         public ActionResult EditProfile()
         {

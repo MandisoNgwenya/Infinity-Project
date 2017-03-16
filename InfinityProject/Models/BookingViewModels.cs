@@ -12,14 +12,15 @@ namespace InfinityProject.Models
         [Key]
         public int BookingID { get; set; }
   
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string cName { get; set; }
+        public string cSurname { get; set; }
         public string IDNumber { get; set; }
         public string Address { get; set; }
         public string TelNo { get; set; }
 
         public string Device { get; set; }
 
+        public string JobCard { get; set; }
 
         public string Id { get; set; }
         [ForeignKey("Id")]
