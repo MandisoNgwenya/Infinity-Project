@@ -1,7 +1,10 @@
 ﻿using InfinityProject.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -21,15 +24,42 @@ namespace InfinityProject.Controllers
 
         // GET: Customer/Details/5
       
-        public ActionResult Profile(int id)
+        public ActionResult Profile(string name, string surname, int? id)
         {
-            // List of all Booking made in the past
-            //view individual booking status
-           //link to edit profile RedirectToAction("EditProfile")
-           //
+            if ( id== null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
 
-            return View();
+            try {
+                BookingViewModels model = new BookingViewModels();
+                Customer p = new Customer();
+                p.Name = name;
+                p.Surname = surname;
+
+                p.Id = User.Identity.GetUserId();
+                UserManager<ApplicationUser> UserManager =
+                    new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                p.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
+                id = Convert.ToInt16(p.Id);
+                var booking = new BookingViewModels();
+                booking.Name = model.Name;
+                booking.Surname = model.Surname;
+                booking.IDNumber = model.IDNumber;
+
+                booking.TelNo = model.TelNo;
+                booking.Address = model.Address;
+                booking.Device = model.Device;
+                return View(p);
+            }
+            catch
+            {
+                return ViewBag.Message();
+            }
+            
+        
         }
+
 
         [HttpPost]
         public ActionResult Profile()

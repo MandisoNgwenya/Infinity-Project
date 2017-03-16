@@ -58,7 +58,7 @@ namespace InfinityProject.Models
         public string Role { get; set; }
     }
 
-    public abstract class Customer : UserProfile
+    public abstract class CustomerP : UserProfile
     {
 
         public string IdentityNumber { get; set; }
@@ -79,7 +79,7 @@ namespace InfinityProject.Models
 
 
 
-        public class Booking:Customer
+        public class Booking:CustomerP
     {
 
         public Booking()
@@ -126,7 +126,7 @@ namespace InfinityProject.Models
 
         public System.Data.Entity.DbSet<InfinityProject.Models.BookingViewModels> BookingViewModels { get; set; }
 
-        //public DbSet<CustomerProfile> customer { get; set; }
+        public DbSet<Customer> customer { get; set; }
 
         public DbSet <Quotation> quotation { get; set; }
         public DbSet<Clerk> clerk { get; set; }
