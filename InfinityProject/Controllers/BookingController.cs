@@ -22,19 +22,19 @@ namespace InfinityProject.Controllers
         }
 
         //// GET: Booking/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    BookingViewModels bookingViewModels = db.BookingViewModels.Find(id);
-        //    if (bookingViewModels == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(bookingViewModels);
-        //}
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            BookingViewModels bookingViewModels = db.BookingViewModels.ToList().Find(x => x.BookingID == id);
+            if (bookingViewModels == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bookingViewModels);
+        }
 
         // GET: Booking/Create
         public ActionResult Index(string name, string surname)
