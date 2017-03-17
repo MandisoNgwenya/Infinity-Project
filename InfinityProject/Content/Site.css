@@ -192,7 +192,7 @@ width:200px;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:crimson;
+    background-color:aliceblue;
     overflow-x:hidden;
        overflow-y:hidden;
     padding-top: 50px;
@@ -209,12 +209,12 @@ width:200px;
   
     text-decoration:overline;   
     font-size: 20px;
-    color:gold;     
+    color:black;    
   font-weight:700;
     transition: 0.3s;
     position:center;
   
-text-decoration-color:cadetblue;
+text-decoration-color:gold;
 
 
    
@@ -222,12 +222,12 @@ text-decoration-color:cadetblue;
 
 .sidenav a:hover, .offcanvas a:focus
 {
-    color:cadetblue;
-    text-decoration-color:gold;
+    color:gold;
+    text-decoration-color:black;    
 }
 
 .sidenav .closebtn {
-    position: absolute;
+    position:inherit;
     top: 0;
     right: 25px;
     font-size: 36px;
