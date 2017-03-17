@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using InfinityProject.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 
 namespace InfinityProject.Controllers
 {
@@ -17,10 +18,21 @@ namespace InfinityProject.Controllers
         // GET: Booking
         public ActionResult Index1()
         {
+
             string userID = User.Identity.GetUserId();
             return View(db.BookingViewModels.Where(x => x.Id == userID));
         }
 
+        //public ActionResult Index1(int?id)
+        //{
+        //    var bookings = new BookingViewModels();
+        //    bookings.JobCard = db.BookingViewModels
+        //        .Include(i => i.cName)
+        //        .Include(i => i.JobCard).Include(i => i.Device)
+        //        .Include(i => i.Date).Include(i => i.Clerk).Include(i => i.Technician).OrderBy(i => i.Date).ToString();
+        //    string userID = User.Identity.GetUserId();
+        //       return View(bookings);
+        //}
         //// GET: Booking/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,14 +48,36 @@ namespace InfinityProject.Controllers
             return View(bookingViewModels);
         }
 
+      
+    
         // GET: Booking/Create
-        public ActionResult Index(string name, string surname)
+        public ActionResult Index(string name, string surname,string n)
         {
             try {
+
+                Random gen = new Random();
+                //String r = generator.Next(0, 1000000).ToString("D6");
+                //if (r.Distinct().Count() == 1)
+                //{
+                //    r = JobCardGen(rx);
+
+                //}
+                //return r;
+                int size = 10;
+                string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+                //var chars = Enumerable.Range(0, size).Select(x => input[gen.Next(0, input.Length)]);
+                //return new string(chars.ToArray());
+
+                char[] chars = new char[size];
+                for (int i = 0; i < size; i++)
+                {
+                    chars[i] = input[gen.Next(input.Length)];
+                }
+              
                 BookingViewModels b = new BookingViewModels();
                 b.cName = name;
                 b.cSurname = surname;
-
+                b.JobCard = chars.ToString();
                 b.Id = User.Identity.GetUserId();
                 UserManager<ApplicationUser> UserManager =
                     new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
@@ -66,10 +100,11 @@ namespace InfinityProject.Controllers
             if (ModelState.IsValid)
             {
                 var booking = new BookingViewModels();
+                booking.JobCard = model.JobCard;
                 booking.cName = model.cName;
                 booking.cSurname = model.cSurname;
                 booking.IDNumber = model.IDNumber;
-             
+             booking.JobCard=model.JobCard;
                 booking.TelNo = model.TelNo;
                 booking.Address = model.Address;
                 booking.Device = model.Device;
@@ -86,6 +121,10 @@ namespace InfinityProject.Controllers
         // GET: Booking/Edit/5
         public ActionResult Edit(int? id)
         {
+            BookingViewModels b = new BookingViewModels();
+        
+           
+            b.Id = User.Identity.GetUserId();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -99,21 +138,28 @@ namespace InfinityProject.Controllers
             
         }
 
-        // POST: Booking/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookingID,cName,cSurname,IDNumber,Address,TelNo,Device")] BookingViewModels bookingViewModels)
+        public ActionResult Edit([Bind(Include = "BookingID,cName,cSurname,IDNumber,Address,TelNo,Device")] BookingViewModels model)
         {//The script is updating but removing the Id field, tried adding Id on the include but got an error
             if (ModelState.IsValid)
             {
-                db.Entry(bookingViewModels).State = EntityState.Modified;
+                var booking = new BookingViewModels();
+                booking.cName = model.cName;
+                booking.cSurname = model.cSurname;
+                booking.IDNumber = model.IDNumber;
+                booking.JobCard = model.JobCard;
+                booking.TelNo = model.TelNo;
+                booking.Address = model.Address;
+                booking.Device = model.Device;
+                booking.Id = User.Identity.GetUserId();
+                db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index1");
 
             }
-            return View(bookingViewModels);
+            return View(model);
         }
 
         //GET: Booking/Delete/5

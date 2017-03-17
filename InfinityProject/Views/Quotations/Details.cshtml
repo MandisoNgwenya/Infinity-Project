@@ -1,4 +1,4 @@
-﻿@model InfinityProject.Models.Technician
+﻿@model InfinityProject.Models.Quotation
 
 @{
     ViewBag.Title = "Details";
@@ -12,33 +12,9 @@
     <h2>Details</h2>
 
     <div>
-        <h4>Technician</h4>
+        <h4>Quotation</h4>
         <hr />
         <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.First_Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.First_Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Last_Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Last_Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Date_OF_Bith)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Date_OF_Bith)
-            </dd>
-
             <dt>
                 @Html.DisplayNameFor(model => model.Job_Card)
             </dt>
@@ -48,11 +24,35 @@
             </dd>
 
             <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.Description)
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Deposit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Deposit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Total)
             </dd>
 
         </dl>

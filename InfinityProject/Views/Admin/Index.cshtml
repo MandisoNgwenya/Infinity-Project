@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div style="text-align:center">
+    @using (Html.BeginForm())
+    {
+        <label> Role Name</label>
+        <input type="text"name="roleName"/>
+        <br/>
+        <input type="submit" value="add"/>
+
+    }
+    <hr/>
+    <div style="text-align:center">
+        @using (Html.BeginForm("AddUserRole","Home"))
+        {
+            <label>Admin Email</label>
+            <input type="text"name="user"/>
+            <br/>
+            <input type="submit" name="Add" value="add"/>
+
+        }
+    </div>
+    </div>

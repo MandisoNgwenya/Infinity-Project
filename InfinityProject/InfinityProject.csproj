@@ -180,6 +180,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\ClerksController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -217,6 +218,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mySidenav.css" />
     <Content Include="Content\new-bootstrap.css" />
     <Content Include="Content\sideNav.css" />
     <Content Include="favicon.ico" />
@@ -310,9 +312,19 @@
     <Content Include="Views\Clerks\Edit.cshtml" />
     <Content Include="Views\Clerks\Index.cshtml" />
     <Content Include="Views\Clerks\Bookings.cshtml" />
+    <Content Include="Views\Quotations\Create.cshtml" />
+    <Content Include="Views\Quotations\Delete.cshtml" />
+    <Content Include="Views\Quotations\Details.cshtml" />
+    <Content Include="Views\Quotations\Edit.cshtml" />
+    <Content Include="Views\Quotations\Index.cshtml" />
+    <Content Include="Views\Manage\History.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\CreateRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Roles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

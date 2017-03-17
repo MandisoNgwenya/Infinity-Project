@@ -48,7 +48,12 @@ namespace InfinityProject.Controllers
                 _userManager = value;
             }
         }
-
+        public ActionResult History()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            string userID = User.Identity.GetUserId();
+            return View(db.BookingViewModels.Where(x => x.Id == userID));
+        }
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)

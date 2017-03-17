@@ -3,6 +3,27 @@
 @{
     ViewBag.Title = "Log in";
 }
+<br />
+<br />
+<br />
+<br />
+<br /><br />
+<br />
+<div id="mySidenav" class="sidenav">
+    <div><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></div>
+
+    <p>Any Links</p>
+</div>
+
+<div align="center" class="openNav">
+    <span onclick="openNav()">
+        <div class="jumbotron alert-danger">
+            <a href="~/Account/Register" class=" btn-success    btn-group-lg btn-block"><span class="glyphicon  glyphicon-question-sign">    Don't have an account? Register</span></a>
+        </div>
+    </span>
+</div>
+<br />  
+<div class="jumbotron"
 
 <h2>@ViewBag.Title.</h2>
 <div class="row">
@@ -16,14 +37,14 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    <div class="col-md-5">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
@@ -42,7 +63,7 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Register as a new user", "Register")
+                  <br/>
                 </p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
@@ -61,3 +82,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+</div>  

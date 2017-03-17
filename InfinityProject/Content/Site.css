@@ -12,6 +12,9 @@
   background-color:aliceblue;
 }
 
+.regC{
+    align-content:center;
+}
 .x
 {
   animation: move 3s;  
