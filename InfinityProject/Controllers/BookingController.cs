@@ -87,18 +87,19 @@ namespace InfinityProject.Controllers
         }
 
         // GET: Booking/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
+            if (id < 1)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BookingViewModels bookingViewModels = db.BookingViewModels.Find(id);
+            var bookingViewModels = db.BookingViewModels.ToList().Find(x => x.BookingID == id);
             if (bookingViewModels == null)
             {
                 return HttpNotFound();
             }
             return View(bookingViewModels);
+            
         }
 
         // POST: Booking/Edit/5
