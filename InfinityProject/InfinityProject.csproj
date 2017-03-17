@@ -181,6 +181,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\ClerksController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\Employees.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -188,8 +189,13 @@
     <Compile Include="Controllers\Quotation.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\StatusModelsController.cs" />
+    <Compile Include="Controllers\TechniciansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171555324_x.cs" />
+    <Compile Include="Migrations\201703171555324_x.Designer.cs">
+      <DependentUpon>201703171555324_x.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -212,6 +218,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\new-bootstrap.css" />
+    <Content Include="Content\sideNav.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -224,6 +231,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="images\back.jpg" />
+    <Content Include="images\back2.jpg" />
+    <Content Include="images\back3.jpg" />
+    <Content Include="js\navScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -288,17 +299,29 @@
     <Content Include="Views\StatusModels\Details.cshtml" />
     <Content Include="Views\StatusModels\Edit.cshtml" />
     <Content Include="Views\StatusModels\Index.cshtml" />
+    <Content Include="Views\Technicians\Create.cshtml" />
+    <Content Include="Views\Technicians\Delete.cshtml" />
+    <Content Include="Views\Technicians\Details.cshtml" />
+    <Content Include="Views\Technicians\Edit.cshtml" />
+    <Content Include="Views\Technicians\Index.cshtml" />
+    <Content Include="Views\Clerks\Create.cshtml" />
+    <Content Include="Views\Clerks\Delete.cshtml" />
+    <Content Include="Views\Clerks\Details.cshtml" />
+    <Content Include="Views\Clerks\Edit.cshtml" />
+    <Content Include="Views\Clerks\Index.cshtml" />
+    <Content Include="Views\Clerks\Bookings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
-    <Folder Include="Views\Employees\" />
-    <Folder Include="Views\Quotation\" />
-    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703171555324_x.resx">
+      <DependentUpon>201703171555324_x.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

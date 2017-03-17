@@ -4,73 +4,77 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="jumbotron" height="294">
+    <h2>Index</h2>
 
-<p>
-    <!--This code adds the user name and surname to the link to add on to form-->
-    <!--Html.ActionLink("Create New", "Index", new { name = 1, surname = 1 }, null)-->
-    @Html.ActionLink("Create New", "Index")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.cName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cSurname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IDNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TelNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Device)
-        </th>
-        <th></th>
-    </tr>
-
-    @if (Model == null)
-    {
+    <p>
+        <!--This code adds the user name and surname to the link to add on to form-->
+        <!--Html.ActionLink("Create New", "Index", new { name = 1, surname = 1 }, null)-->
+        @Html.ActionLink("Create New", "Index")
+    </p>
+    <table class="table">
         <tr>
-            <td>No data found</td>
+            <th>
+                @Html.DisplayNameFor(model => model.cName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Device)
+            </th>
+            <th></th>
         </tr>
-    }
-    else
-    {
-        foreach (var item in Model)
+
+        @if (Model == null)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.cName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.cSurname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IDNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TelNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Device)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.BookingID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.BookingID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.BookingID })
-                </td>
+                <td>No data found</td>
             </tr>
         }
-    }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cSurname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Device)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.BookingID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingID })
+                    </td>
+                </tr>
+            }
+        }
 
 
-</table>
+    </table>
+
+
+</div>

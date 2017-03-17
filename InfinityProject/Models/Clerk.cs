@@ -6,7 +6,7 @@ namespace InfinityProject.Models
     public class Clerk
     {
         [Key]
-        public int IdCl { get; set; }
+        public int Id { get; set; }
 
         // public string Job_Card { get; set; }
 

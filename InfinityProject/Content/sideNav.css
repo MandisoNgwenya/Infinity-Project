@@ -1,0 +1,23 @@
+﻿
+
+.navigationPanel{
+   float:right;
+   height:294px ;
+
+   background-color:black;
+   font-family:Arial;   
+   text-decoration:overline;    
+
+
+}
+
+
+.navigationPanelLeft{
+   float:left;
+   height:294px ;
+   background-color:black;      
+      font-family:Arial;   
+   text-decoration:overline; 
+
+
+}

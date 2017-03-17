@@ -4,63 +4,67 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="jumbotron" height="294">
+    <h2>Details</h2>
 
-<div>
-    <h4>BookingViewModels</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.cName)
-        </dt>
+    <div>
+        
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.cName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.cName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cSurname)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.cSurname)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cSurname)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.cSurname)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IDNumber)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDNumber)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IDNumber)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.IDNumber)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TelNo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TelNo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TelNo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TelNo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Device)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Device)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Device)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Device)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BookingID }) |
+        @Html.ActionLink("Back to List", "Index1")
+    </p>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingID }) |
-    @Html.ActionLink("Back to List", "Index1")
-</p>

@@ -6,9 +6,19 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/sideNav.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+  
+    <script src="js/navScript.js"></script>
+    <script src="js/slides.js"></script>
 
 </head>
+
 <body>
+
+
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,10 +39,39 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+    
+    @*<div class="navigationPanelLeft">
+        <div style="margin: 40px 25px 2px 25px;">
+
+            <a>@Html.ActionLink("Bookings", "Index", "Home")</a>
+            <br />
+            <br />
+            <a>@Html.ActionLink("Profile", "Index", "Home")</a>
+            <br />
+            <br />
+            <a>@Html.ActionLink("Administration", "Index", "Home")</a>
+            <br />
+            <br />
+            <a>@Html.ActionLink("Home", "Index", "Home")</a>
+            <br />
+            <br />
+            <a>@Html.ActionLink("Home", "Index", "Home")</a>
+            <br />
+            <br />
+            <a>@Html.ActionLink("Home", "Index", "Home")</a>
+        </div>
+    </div>*@
+   
+    <br/>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="footer">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
@@ -40,5 +79,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
