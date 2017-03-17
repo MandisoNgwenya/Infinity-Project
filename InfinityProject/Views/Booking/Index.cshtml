@@ -31,7 +31,7 @@
             <div class="col-md-10">
                 <!--
                 Html.EditorFor(model => model.cSurname, new { htmlAttributes = new { class = "form-control", readonly = "readonly", Value = ((Model == null) ? "Enter Surname" : Model.cSurname.ToString()) } })-->
-                @Html.EditorFor(model => model.cSurname, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = ((Model == null) ? "Enter Surname" : Model.cSurname.ToString()) } })
+                @Html.EditorFor(model => model.cSurname, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.cSurname, "", new { @class = "text-danger" })
             </div>
         </div>
