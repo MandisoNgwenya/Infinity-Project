@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using InfinityProject.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Web.Security;
 
 namespace InfinityProject.Controllers
 {
@@ -17,17 +18,10 @@ namespace InfinityProject.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Booking
-        public ActionResult Index1()
+        public  ActionResult Index1()
         {
-            //BookingViewModels b = new BookingViewModels();
-
-            //b.Id = User.Identity.GetUserId();
-            //UserManager<ApplicationUser> UserManager =
-            //    new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            //b.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
-
-            //BookingViewModels bx = db.BookingViewModels.ToList().Find(x => x.Id == b.Id);
-            return View(db.BookingViewModels.ToList());
+            string userID = User.Identity.GetUserId();
+            return View(db.BookingViewModels.Where(x => x.Id == userID));
         }
 
         //// GET: Booking/Details/5
