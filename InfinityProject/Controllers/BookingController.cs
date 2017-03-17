@@ -70,7 +70,7 @@ namespace InfinityProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "BookingID,Name,Surname,IDNumber,Address,TelNo,Device,Id")] BookingViewModels model)
+        public ActionResult Index([Bind(Include = "BookingID,cName,cSurname,IDNumber,Address,TelNo,Device,Id")] BookingViewModels model)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace InfinityProject.Controllers
                 booking.Id = User.Identity.GetUserId();
                 db.BookingViewModels.Add(booking);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index1");
 
             }
 
