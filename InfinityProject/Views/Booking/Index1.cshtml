@@ -32,32 +32,43 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>    
-            @Html.DisplayFor(modelItem => item.cName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cSurname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Device)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BookingID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookingID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookingID })
-        </td>
-    </tr>
-}
+    @if (Model == null)
+    {
+        <tr>
+            <td>No data found</td>
+        </tr>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cSurname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Device)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookingID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BookingID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookingID })
+                </td>
+            </tr>
+        }
+    }
+
 
 </table>
