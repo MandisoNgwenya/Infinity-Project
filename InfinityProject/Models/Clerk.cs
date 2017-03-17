@@ -19,7 +19,7 @@ namespace InfinityProject.Models
         public string email { get; set; }
         public string User_Name { get; set; }
 
-        public BookingViewModels bookingViewModel { get; set; }
+
 
     }
 }
