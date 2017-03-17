@@ -19,8 +19,6 @@
         <div class="form-group">
             @Html.LabelFor(model => model.cName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <!-- Enters the user name from the database instead of a http get request, add the at sign before 
-                Html.EditorFor(model => model.cName, new { htmlAttributes = new { class = "form-control", readonly = "readonly", Value = ((Model == null) ? "Enter Name" : Model.cName.ToString()) } })-->
                 @Html.EditorFor(model => model.cName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.cName, "", new { @class = "text-danger" })
             </div>
@@ -29,9 +27,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.cSurname, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <!--
-                Html.EditorFor(model => model.cSurname, new { htmlAttributes = new { class = "form-control", readonly = "readonly", Value = ((Model == null) ? "Enter Surname" : Model.cSurname.ToString()) } })-->
-                @Html.EditorFor(model => model.cSurname, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = ((Model == null) ? "Enter Surname" : Model.cSurname.ToString()) } })
+                @Html.EditorFor(model => model.cSurname, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.cSurname, "", new { @class = "text-danger" })
             </div>
         </div>
