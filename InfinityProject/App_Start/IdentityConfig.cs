@@ -7,27 +7,58 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using InfinityProject.Models;
+using System.Net.Mail;
+using System.Net;
+using Twilio.Clients;
 
 namespace InfinityProject
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
+        {
+            await configSMTPasync(message);
+        }
+
+        // send email via smtp service
+        private async Task configSMTPasync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            var credentialUserName = "info@ourdoamin.com";
+            var sentFrom = "noreply@ourdoamin.com";
+            var pwd = "ourpassword";
+
+            // Configure the client:
+            System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.ourdomain.com");
+
+            client.Port = 25;
+            client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+
+            // Creatte the credentials:
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(credentialUserName, pwd);
+            client.EnableSsl = false;
+            client.Credentials = credentials;
+
+            // Create the message:
+            var mail = new System.Net.Mail.MailMessage(sentFrom, message.Destination);
+            mail.Subject = message.Subject;
+            mail.Body = message.Body;
+
+            await client.SendMailAsync(mail);
         }
     }
-
     public class SmsService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
+            public Task SendAsync(IdentityMessage message)
+            {
+
+            TwilioRestClient client = new TwilioRestClient("<Your Account SID>", "<Your account auth token>");
+            client.SendSmsMessage("<The number you are sending from>", message.Destination, message.Body);
+
             return Task.FromResult(0);
         }
     }
-
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
