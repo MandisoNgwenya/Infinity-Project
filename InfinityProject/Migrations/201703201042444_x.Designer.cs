@@ -13,12 +13,12 @@ namespace InfinityProject.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201703171555324_x"; }
+            get { return "201703201042444_x"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

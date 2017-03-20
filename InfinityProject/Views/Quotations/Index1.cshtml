@@ -1,10 +1,8 @@
 ﻿@model InfinityProject.Models.Quotation
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    <div class="jumbotron"
-    <div class="form-horizontal">
+    <br />
+<br/> <br/> 
+<div class="jumbotron">
+     @using (Html.BeginForm()) { @Html.AntiForgeryToken()   <div class="form-horizontal">
         <h4>Quotation</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
