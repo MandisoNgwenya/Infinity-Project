@@ -3,62 +3,56 @@
 @{
     ViewBag.Title = "Details";
 }
-<br />
-<br />
-<br />
-<br />
 
-<div class="jumbotron">
-    <h2>Details</h2>
+<h2>Details</h2>
 
-    <div>
-        <h4>Quotation</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Job_Card)
-            </dt>
+<div>
+    <h4>Quotation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Card)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Job_Card)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Job_Card)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Deposit)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Deposit)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Deposit)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Deposit)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Total)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Total)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
 
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-    </div>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

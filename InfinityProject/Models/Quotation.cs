@@ -11,9 +11,10 @@ namespace InfinityProject.Models
         public string Description { get; set; }
         public double Deposit { get; set; }
         public double Total { get; set; }
-
-        //public Technician technician { get; set; }
-        ////public Clerk clerk { get; set; }
+        public string IDNumber { get; set; }
+        public string technician { get; set; }
+        public string Accessories { get; set; }
+        //public Clerk clerk { get; set; }
         //public BookingViewModels Booking { get; set; }
 
     }

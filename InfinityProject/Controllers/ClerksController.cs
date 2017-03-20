@@ -14,7 +14,7 @@ namespace InfinityProject.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clerks
+    
         public ActionResult Index()
         {
             return View(db.clerk.ToList());

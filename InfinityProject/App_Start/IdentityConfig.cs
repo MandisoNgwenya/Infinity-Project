@@ -53,8 +53,8 @@ namespace InfinityProject
             public Task SendAsync(IdentityMessage message)
             {
 
-            TwilioRestClient client = new TwilioRestClient("<Your Account SID>", "<Your account auth token>");
-            client.SendSmsMessage("<The number you are sending from>", message.Destination, message.Body);
+            //TwilioRestClient client = new TwilioRestClient("<Your Account SID>", "<Your account auth token>");
+            //client.SendSmsMessage("<The number you are sending from>", message.Destination, message.Body);
 
             return Task.FromResult(0);
         }

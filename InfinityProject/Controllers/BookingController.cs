@@ -56,18 +56,9 @@ namespace InfinityProject.Controllers
             try {
 
                 Random gen = new Random();
-                //String r = generator.Next(0, 1000000).ToString("D6");
-                //if (r.Distinct().Count() == 1)
-                //{
-                //    r = JobCardGen(rx);
-
-                //}
-                //return r;
+              
                 int size = 10;
                 string input = "abcdefghijklmnopqrstuvwxyz0123456789";
-                //var chars = Enumerable.Range(0, size).Select(x => input[gen.Next(0, input.Length)]);
-                //return new string(chars.ToArray());
-
                 char[] chars = new char[size];
                 for (int i = 0; i < size; i++)
                 {
