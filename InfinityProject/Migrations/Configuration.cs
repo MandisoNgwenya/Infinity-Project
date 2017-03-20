@@ -9,8 +9,7 @@ namespace InfinityProject.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationDataLossAllowed = true;
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(InfinityProject.Models.ApplicationDbContext context)

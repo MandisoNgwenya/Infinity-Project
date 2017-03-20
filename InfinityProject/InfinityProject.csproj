@@ -286,9 +286,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703201042444_x.cs" />
-    <Compile Include="Migrations\201703201042444_x.Designer.cs">
-      <DependentUpon>201703201042444_x.cs</DependentUpon>
+    <Compile Include="Migrations\201703201318438_x.cs" />
+    <Compile Include="Migrations\201703201318438_x.Designer.cs">
+      <DependentUpon>201703201318438_x.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -306,10 +306,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-InfinityProject-20170312063422.mdf" />
-    <Content Include="App_Data\aspnet-InfinityProject-20170312063422_log.ldf">
-      <DependentUpon>aspnet-InfinityProject-20170312063422.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -332,6 +328,11 @@
     <Content Include="images\back.jpg" />
     <Content Include="images\back2.jpg" />
     <Content Include="images\back3.jpg" />
+    <Content Include="images\images.jpg" />
+    <Content Include="images\img2.jpg" />
+    <Content Include="images\img3.jpg" />
+    <Content Include="images\index.jpg" />
+    <Content Include="images\nnn.jpg" />
     <Content Include="js\navScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -360,7 +361,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -418,8 +421,10 @@
     <Content Include="Views\Admin\CreateRole.cshtml" />
     <Content Include="Views\Quotations\Index1.cshtml" />
     <Content Include="Views\Clerks\CreateQuote.cshtml" />
+    <Content Include="Views\Admin\cv.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
@@ -427,8 +432,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703201042444_x.resx">
-      <DependentUpon>201703201042444_x.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703201318438_x.resx">
+      <DependentUpon>201703201318438_x.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
