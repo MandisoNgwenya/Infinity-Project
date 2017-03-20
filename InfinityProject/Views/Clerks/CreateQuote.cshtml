@@ -1,0 +1,28 @@
+﻿<body>
+
+    @using (Html.BeginForm("SaveSession", "Home", FormMethod.Post))
+    {
+        @ViewData["sessionString"]
+        <fieldset>
+
+            The text will be stored: @Html.TextBox("sessionValue")
+
+
+            <input type="submit" id="submitToMethod1" name="submit" value="submit" />
+
+        </fieldset>
+    }
+    @using (Html.BeginForm("SaveSessionByExtensions", "Home", FormMethod.Post))
+    {
+        @ViewData["sessionStringByExtensions"]
+        <fieldset>
+
+            The text will be stored: @Html.TextBox("sessionValue")
+
+
+            <input type="submit" id="submitToMethod2" name="submit" value="submit" />
+
+        </fieldset>
+    }
+
+</body> 

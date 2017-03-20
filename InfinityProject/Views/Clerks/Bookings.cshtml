@@ -12,7 +12,13 @@
     <h2>Bookings</h2>
 
     <p>
-
+        <div  class="form-group">
+            @Html.Label("ID Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("searchString")
+                <input type="submit" value="search" class="btn-danger" />
+            </div>
+        </div>
     </p>
     <table class="table">
         <tr>
@@ -70,7 +76,7 @@
                     @Html.DisplayFor(modelItem => item.JobCard)
                 </td>
                 <td>
-                    @Html.ActionLink("Create Quote", "", new { id=item.BookingID }) |
+                    @Html.ActionLink("Create Quote", "CreateQuote", new { id=item.BookingID }) |
 
 
                 </td>

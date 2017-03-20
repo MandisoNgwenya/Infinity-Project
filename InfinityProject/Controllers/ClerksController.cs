@@ -20,11 +20,39 @@ namespace InfinityProject.Controllers
             return View(db.clerk.ToList());
         }
 
-        public ActionResult Bookings()
+        public ActionResult Bookings(string searchString)
         {
-            return View(db.BookingViewModels.ToList());
+
+            try
+            {
+             
+                BookingViewModels bID = new BookingViewModels();
+        
+           
+
+                var booking = from b in db.BookingViewModels
+                              select b;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    booking = booking.Where(x => x.IDNumber.Contains(searchString));
+                }
+
+                return View(booking);
+            }
+            catch
+            {
+                return RedirectToAction("Register", "Account");
+            }
+        
+
+     
+
         }
-        // GET: Clerks/Details/5
+     
+  
+
+
         public ActionResult Details(int? id)
         {
             if (id == null)

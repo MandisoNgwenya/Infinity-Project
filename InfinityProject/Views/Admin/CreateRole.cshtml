@@ -1,28 +1,23 @@
-﻿
+﻿//create view
 @{
-    ViewBag.Title = "CreateRole";
+    ViewBag.Title = "Create";
 }
 
-<h2>CreateRole</h2>
 
-<div style="text-align:center">
-    @using (Html.BeginForm())
-    {
-        <label> Role Name</label>
-        <input type="text" name="roleName" class=" col-lg-10" />
-        <br />
-        <input type="submit" value="add" />
+<h2>Create Role</h2>
+@Html.ActionLink("List Roles", "Index") | @Html.ActionLink("Manage User Role", "ManageUserRoles")
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-    }
-    <hr />
-    <div style="text-align:center">
-        @using (Html.BeginForm("AddUserRole", "Roles"))
-        {
-            <label>Admin Email</label>
-            <input type="text" name="user" />
-            <br />
-            <input type="submit" name="Add" value="add" />
-
-        }
+    <div>
+        Role name
     </div>
-</div>
+    <p>
+        @Html.TextBox("RoleName")
+    </p>
+    <input type="submit" value="Save" />
+}
+@ViewBag.ResultMessage

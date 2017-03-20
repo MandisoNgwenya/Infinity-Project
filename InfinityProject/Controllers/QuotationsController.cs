@@ -22,13 +22,23 @@ namespace InfinityProject.Controllers
             Quotation b = new Quotation();
             //BookingViewModels b = new BookingViewModels();
 
-            b.IDNumber = IDNumber;
+            var techniciansL = new List<SelectListItem>();
+            var techQ = from t in db.technician select t;
+            foreach(var m in techQ)
+            {
+                techniciansL.Add(new SelectListItem
+                {
+                    Value = m.First_Name,
+                    Text = m.First_Name
+                });
+                ViewBag.techniciansL = techniciansL;
+            }
        
-            return View(b);
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Index1(string searchString)
+        public ActionResult Index(string searchString)
         {
             try
             {
@@ -76,7 +86,7 @@ namespace InfinityProject.Controllers
  
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Job_Card,Name,Description,Deposit,Total")] Quotation model)
+        public ActionResult Index1([Bind(Include = "Id,Job_Card,Name,Description,Deposit,Total")] Quotation model)
         {
             if (ModelState.IsValid)
             {
