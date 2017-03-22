@@ -10,7 +10,7 @@ using InfinityProject.Models;
 
 namespace InfinityProject.Controllers
 {
-    public class QuotationsController : Controller
+    public class QuotationController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
