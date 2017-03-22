@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace InfinityProject.Models
 {
@@ -8,6 +9,7 @@ namespace InfinityProject.Models
         public int Id { get; set; }
         public string Job_Card { get; set; }
         public string Name { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         public double Deposit { get; set; }
         public double Total { get; set; }
@@ -17,8 +19,13 @@ namespace InfinityProject.Models
         public string Accessories { get; set; }
         public string status { get; set; }
         public string email { get; set; }
-        //public Clerk clerk { get; set; }
-        //public BookingViewModels Booking { get; set; }
+    
+        //public int SelectedTechId { get; set; }
+        //public List<Technician> technicians { get; set; }
+        //public Technician technician { get; set; }
+        //public int selectedBookingID { get; set; }
+        //public List<BookingViewModels> bookings { get; set; }
+        //public BookingViewModels booking { get; set; }
 
     }
 }

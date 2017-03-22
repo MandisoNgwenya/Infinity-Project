@@ -52,6 +52,13 @@ namespace InfinityProject.Controllers
             try
             {
 
+//                var user = db.BookingViewModels.Where(x => x.Id == User.Identity.GetUserId())
+//.Select(x => new {
+
+//Name = x.cName,
+//Surname = x.cSurname,
+//IDNum = x.IDNumber
+//}).Single();
 
                 BookingViewModels b = new BookingViewModels();
                 b.cName = name;
@@ -77,6 +84,7 @@ namespace InfinityProject.Controllers
         public ActionResult NewBooking([Bind(Include = "BookingID,cName,cSurname,IDNumber,Address,TelNo,Device,Id")] BookingViewModels model)
         {
 
+   
             Random gen = new Random();
 
             int size = 10;

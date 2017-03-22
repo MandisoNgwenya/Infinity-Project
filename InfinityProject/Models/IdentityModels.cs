@@ -137,6 +137,8 @@ namespace InfinityProject.Models
 
         public System.Data.Entity.DbSet<InfinityProject.Models.Customer> Customers { get; set; }
 
+        public System.Data.Entity.DbSet<InfinityProject.Models.testing> testings { get; set; }
+
         //public System.Data.Entity.DbSet<InfinityProject.Models.ApplicationUser> ApplicationUsers { get; set; }
         //public DbSet<RoleViewModel> Employee { get; set; }
     }
