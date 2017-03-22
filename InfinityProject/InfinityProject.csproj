@@ -278,9 +278,7 @@
     <Compile Include="Controllers\Employees.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <None Include="Controllers\sumclass" />
-    <None Include="Controllers\SumClas" />
-    <Compile Include="Controllers\QuotationsController.cs" />
+    <Compile Include="Controllers\QuotationController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StatusModelsController.cs" />
