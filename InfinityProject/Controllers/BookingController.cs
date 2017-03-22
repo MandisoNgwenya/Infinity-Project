@@ -47,9 +47,73 @@ namespace InfinityProject.Controllers
             }
             return View(bookingViewModels);
         }
+        public ActionResult NewBooking(string name, string surname, string n)
+        {
+            try
+            {
 
-      
-    
+
+                BookingViewModels b = new BookingViewModels();
+                b.cName = name;
+                b.cSurname = surname;
+           
+                b.Id = User.Identity.GetUserId();
+                UserManager<ApplicationUser> UserManager =
+                    new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                b.Id = UserManager.FindById(User.Identity.GetUserId()).ToString();
+                return View(b);
+            }
+            catch
+            {
+                return RedirectToAction("Register","Account");
+            }
+
+
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult NewBooking([Bind(Include = "BookingID,cName,cSurname,IDNumber,Address,TelNo,Device,Id")] BookingViewModels model)
+        {
+
+            Random gen = new Random();
+
+            int size = 10;
+            string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+            char[] chars = new char[size];
+            for (int i = 0; i < size; i++)
+            {
+                chars[i] = input[gen.Next(input.Length)];
+            }
+            model.JobCard = chars.ToString();
+
+            int idNo = Convert.ToInt16(model.IDNumber);
+            if (idNo <= 0 && idNo >= 14)
+            {
+                ViewBag.Error = "Invalid Identity Number";
+            }
+            if (ModelState.IsValid)
+            {
+                var booking = new BookingViewModels();
+                booking.JobCard = model.JobCard;
+                booking.cName = model.cName;
+                booking.cSurname = model.cSurname;
+                booking.IDNumber = model.IDNumber;
+                booking.JobCard = model.JobCard;
+                booking.TelNo = model.TelNo;
+                booking.Address = model.Address;
+                booking.Device = model.Device;
+                booking.Id = User.Identity.GetUserId();
+                db.BookingViewModels.Add(booking);
+                db.SaveChanges();
+                return RedirectToAction("Index1");
+
+            }
+
+            return View(model);
+        }
+
         // GET: Booking/Create
         public ActionResult Index(string name, string surname,string n)
         {
@@ -77,17 +141,34 @@ namespace InfinityProject.Controllers
             }
             catch
             {
-                return ViewBag.Message();
+                return RedirectToAction("Register", "Account");
             }
             
         
         }
 
+ 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "BookingID,cName,cSurname,IDNumber,Address,TelNo,Device,Id")] BookingViewModels model)
         {
+            Random gen = new Random();
+
+            int size = 10;
+            string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+            char[] chars = new char[size];
+            for (int i = 0; i < size; i++)
+            {
+                chars[i] = input[gen.Next(input.Length)];
+            }
+            model.JobCard = chars.ToString();
+
+            int idNo = Convert.ToInt16(model.IDNumber);
+            if (idNo <= 0 && idNo >= 14)
+            {
+                ViewBag.Error = "Invalid Identity Number";
+            }
             if (ModelState.IsValid)
             {
                 var booking = new BookingViewModels();

@@ -281,6 +281,7 @@
     <Compile Include="Controllers\Quotations.cs" />
     <Compile Include="Controllers\QuotationsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StatusModelsController.cs" />
     <Compile Include="Controllers\TechniciansController.cs" />
     <Compile Include="Global.asax.cs">
@@ -419,9 +420,14 @@
     <Content Include="Views\Quotations\Index1.cshtml" />
     <Content Include="Views\Clerks\CreateQuote.cshtml" />
     <Content Include="Views\Admin\cv.cshtml" />
+    <Content Include="Views\Booking\NewBooking.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\Clerk\" />
+    <Folder Include="Views\Admin\Technician\" />
     <Folder Include="Views\Customer\" />
     <Folder Include="Views\NewFolder1\" />
   </ItemGroup>

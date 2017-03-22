@@ -15,7 +15,7 @@ namespace InfinityProject.Controllers
         {
             db = new ApplicationDbContext();
         }
-    
+
         public ActionResult Index()
         {
             var Roles = db.Roles.ToList();

@@ -4020,7 +4020,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
+   padding-top:10px;
   border-bottom: 1px solid #073642;
+  background-color:aliceblue;
 }
 .nav-tabs > li {
   float: left;
