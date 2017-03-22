@@ -10,7 +10,6 @@ namespace InfinityProject.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(InfinityProject.Models.ApplicationDbContext context)

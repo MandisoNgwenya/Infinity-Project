@@ -278,17 +278,13 @@
     <Compile Include="Controllers\Employees.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\QuotationsController.cs" />
+    <Compile Include="Controllers\QuotationController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StatusModelsController.cs" />
     <Compile Include="Controllers\TechniciansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703221221411_Missintechnicians.cs" />
-    <Compile Include="Migrations\201703221221411_Missintechnicians.Designer.cs">
-      <DependentUpon>201703221221411_Missintechnicians.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -297,7 +293,6 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\RegEmployees.cs" />
     <Compile Include="Models\StatusModel.cs" />
-    <Compile Include="Models\testing.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -305,6 +300,11 @@
     <Compile Include="Models\Technician.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Content Include="Views\Quotations\Create.cshtml" />
+    <Content Include="Views\Quotations\Delete.cshtml" />
+    <Content Include="Views\Quotations\Details.cshtml" />
+    <Content Include="Views\Quotations\Edit.cshtml" />
+    <Content Include="Views\Quotations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -423,11 +423,6 @@
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\Roles\Assign.cshtml" />
     <Content Include="Views\Roles\AddUserRole.cshtml" />
-    <Content Include="Views\Quotations\Create.cshtml" />
-    <Content Include="Views\Quotations\Delete.cshtml" />
-    <Content Include="Views\Quotations\Details.cshtml" />
-    <Content Include="Views\Quotations\Edit.cshtml" />
-    <Content Include="Views\Quotations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,11 +435,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703221221411_Missintechnicians.resx">
-      <DependentUpon>201703221221411_Missintechnicians.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

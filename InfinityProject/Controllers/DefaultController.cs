@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace InfinityProject.Controllers
 {
-    public class QuotationController : Controller
+    public class QuotationsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
