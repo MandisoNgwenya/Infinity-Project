@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace InfinityProject.Controllers
 {
@@ -37,7 +38,25 @@ namespace InfinityProject.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult AddUserRole()
+        {
 
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddUserRole(string user)
+        {
+            Roles.AddUserToRole(user, "Admin");
+            return View("Index");
+        }
+        [Authorize(Roles = "Admin")]
+        public ActionResult AdminPanel()
+        {
+            return View();
+        }
 
     }
 }

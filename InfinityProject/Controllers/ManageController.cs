@@ -6,6 +6,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using InfinityProject.Models;
+using System;
+using System.Collections.Generic;
 
 namespace InfinityProject.Controllers
 {
@@ -48,11 +50,37 @@ namespace InfinityProject.Controllers
                 _userManager = value;
             }
         }
-        public ActionResult History()
+        public ActionResult History(string idNumber)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            string userID = User.Identity.GetUserId();
-            return View(db.BookingViewModels.Where(x => x.Id == userID));
+            //List<BookingViewModels> history = db.BookingViewModels.Where(
+            //    x => x.IDNumber == idNumber).ToList();
+            //return View(history);
+            Quotation q = new Quotation();
+            //string userID = User.Identity.GetUserId();
+            //return View(db.BookingViewModels.Where(x => x.Id == userID));
+
+            idNumber = q.IDNumber;
+            return View(db.BookingViewModels.Where(x => x.IDNumber==idNumber));
+
+            //string userID = User.Identity.GetUserId();
+
+            //try
+            //{
+            //    var history = from m in db.BookingViewModels
+            //                  select m;
+
+            //    if (!String.IsNullOrEmpty(searchString))
+            //    {
+            //        history = history.Where(s => s.IDNumber.Contains(searchString));
+            //    }
+            //    return View(history);
+
+            //}
+            //catch
+            //{
+            //    return View(db.BookingViewModels.Where(x => x.Id == userID));
+            //}
         }
         //
         // GET: /Manage/Index

@@ -66,6 +66,10 @@ namespace InfinityProject.Models
     {
 
         [Required]
+        [Display(Name = "Identity No")]
+        public string IDNumber { get; set; }
+
+        [Required]
             [Display(Name = "First Name")]
             public string Name { get; set; }
 

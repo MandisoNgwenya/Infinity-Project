@@ -8,7 +8,7 @@ namespace InfinityProject.Models
         [Key]
         public int Id { get; set; }
 
-        // public string Job_Card { get; set; }
+         public string Job_Card { get; set; }
 
         public string First_Name { get; set; }
         public string Last_Name { get; set; }

@@ -23,30 +23,30 @@ namespace InfinityProject.Controllers
         public ActionResult Bookings(string searchString)
         {
 
-            try
-            {
-             
-                BookingViewModels bID = new BookingViewModels();
-        
-           
+            //try
+            //{
 
-                var booking = from b in db.BookingViewModels
-                              select b;
+            //    BookingViewModels bID = new BookingViewModels();
 
-                if (!String.IsNullOrEmpty(searchString))
-                {
-                    booking = booking.Where(x => x.IDNumber.Contains(searchString));
-                }
 
-                return View(booking);
-            }
-            catch
-            {
-                return RedirectToAction("Register", "Account");
-            }
-        
 
-     
+            //    var booking = from b in db.BookingViewModels
+            //                  select b;
+
+            //    if (!String.IsNullOrEmpty(searchString))
+            //    {
+            //        booking = booking.Where(x => x.IDNumber.Contains(searchString));
+            //    }
+
+            //    return View(booking);
+            //}
+            //catch
+            //{
+            //    return RedirectToAction("Register", "Account");
+            //}
+
+            return View(db.BookingViewModels.ToList());
+
 
         }
      

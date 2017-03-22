@@ -4,17 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<div class="jumbotron">
 <h2>Index</h2>
 
-<div class="form-group">
-    @Html.Label("Enter Customer Identity Number", htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-10">
-        @Html.TextBox("searchString")
-        <input type="submit" value="Search" class="btn btn-success" />
-
-    </div>
-</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -34,6 +25,24 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.technician)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Accessories)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
         </th>
         <th></th>
     </tr>
@@ -56,6 +65,24 @@
             @Html.DisplayFor(modelItem => item.Total)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.technician)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Accessories)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
@@ -64,4 +91,3 @@
 }
 
 </table>
-    </div>

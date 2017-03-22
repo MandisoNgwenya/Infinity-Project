@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using InfinityProject.Models;
-using Microsoft.AspNet.Identity;
 
 namespace InfinityProject.Controllers
 {
@@ -16,53 +15,12 @@ namespace InfinityProject.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Quotations
-
-        public ActionResult Index1( string searchString,string IDNumber)
+        public ActionResult Index()
         {
-            Quotation b = new Quotation();
-            //BookingViewModels b = new BookingViewModels();
-
-            var techniciansL = new List<SelectListItem>();
-            var techQ = from t in db.technician select t;
-            foreach(var m in techQ)
-            {
-                techniciansL.Add(new SelectListItem
-                {
-                    Value = m.First_Name,
-                    Text = m.First_Name
-                });
-                ViewBag.techniciansL = techniciansL;
-            }
-       
-            return View();
+            return View(db.quotation.ToList());
         }
 
-        [HttpPost]
-        public ActionResult Index(string searchString)
-        {
-            try
-            {
-                Quotation q = new Quotation();
-                BookingViewModels bID = new BookingViewModels();
-                q.Id = Convert.ToInt32(User.Identity.GetUserId());
-                q.IDNumber = bID.IDNumber;
-
-                var booking = from b in db.BookingViewModels
-                              select b;
-
-                if (!String.IsNullOrEmpty(searchString))
-                {
-                    booking = booking.Where(x => x.Id.Contains(searchString));
-                }
-                q.IDNumber = User.Identity.GetUserId();
-                return View(db.quotation.Where(x => x.IDNumber== q.IDNumber));
-            }
-            catch
-            {
-                return RedirectToAction("Register", "Account");
-            }
-        }
-
+        // GET: Quotations/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -83,29 +41,21 @@ namespace InfinityProject.Controllers
             return View();
         }
 
- 
+        // POST: Quotations/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index1([Bind(Include = "Id,Job_Card,Name,Description,Deposit,Total")] Quotation model)
+        public ActionResult Create([Bind(Include = "Id,Job_Card,Name,Description,Deposit,Total,Balance,IDNumber,technician,Accessories,status,email")] Quotation quotation)
         {
             if (ModelState.IsValid)
             {
-                var quote = new Quotation();
-                quote.Job_Card = model.Job_Card;
-                quote.technician = model.technician;
-                quote.Total = model.Total;
-                quote.Deposit = quote.Deposit;
-                quote.Description = model.Description;
-                quote.Name = model.Name;
-                quote.IDNumber = model.IDNumber;
-                quote.Id = Convert.ToInt32(User.Identity.GetUserId());
-         
+                db.quotation.Add(quotation);
                 db.SaveChanges();
-                return RedirectToAction("Index1");
-
+                return RedirectToAction("Index");
             }
 
-            return View(model);
+            return View(quotation);
         }
 
         // GET: Quotations/Edit/5
@@ -128,7 +78,7 @@ namespace InfinityProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Job_Card,Name,Description,Deposit,Total")] Quotation quotation)
+        public ActionResult Edit([Bind(Include = "Id,Job_Card,Name,Description,Deposit,Total,Balance,IDNumber,technician,Accessories,status,email")] Quotation quotation)
         {
             if (ModelState.IsValid)
             {

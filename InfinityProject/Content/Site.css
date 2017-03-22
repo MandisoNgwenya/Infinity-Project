@@ -18,7 +18,7 @@ color:black;
   background-color:aliceblue;
 }
 .container-fluid{
-lightskyblue;
+    background-color:lightskyblue;
  
 
 
@@ -258,14 +258,14 @@ text-decoration-color:gold;
 
 .sidenav .closebtn {
     position:inherit;
-    top: 0;
+    top: 0; 
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
 }
 .openNav{
     width:100%;
-    height650px;    
+    
     background-color:gold   ;
  border-top:solid;
 }

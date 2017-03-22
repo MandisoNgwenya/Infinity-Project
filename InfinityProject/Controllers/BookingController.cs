@@ -88,11 +88,11 @@ namespace InfinityProject.Controllers
             }
             model.JobCard = chars.ToString();
 
-            int idNo = Convert.ToInt16(model.IDNumber);
-            if (idNo <= 0 && idNo >= 14)
-            {
-                ViewBag.Error = "Invalid Identity Number";
-            }
+            //long idNo = Convert.ToInt32(model.IDNumber);
+            //if (idNo <= 0 && idNo >= 14)
+            //{
+            //    ViewBag.Error = "Invalid Identity Number";
+            //}
             if (ModelState.IsValid)
             {
                 var booking = new BookingViewModels();
@@ -164,11 +164,11 @@ namespace InfinityProject.Controllers
             }
             model.JobCard = chars.ToString();
 
-            int idNo = Convert.ToInt16(model.IDNumber);
-            if (idNo <= 0 && idNo >= 14)
-            {
-                ViewBag.Error = "Invalid Identity Number";
-            }
+            //long idNo = Convert.ToInt32(model.IDNumber);
+            //if (idNo <= 0 && idNo >= 14)
+            //{
+            //    ViewBag.Error = "Invalid Identity Number";
+            //}
             if (ModelState.IsValid)
             {
                 var booking = new BookingViewModels();
